@@ -1,0 +1,26 @@
+#
+# System user for deamon process.
+#
+nginx_user: "nginx"
+
+#
+# System group for deamon process.
+#
+nginx_group: "nginx"
+
+#
+# Array with services to be restarted on changes.
+#
+nginx_services: ["nginx"]
+
+#
+# Array with vhost configuration.
+#  - label: "example.com"
+#    listen_hosts: ["80", "443 ssl"]
+#    server_names: ["example.com"]
+#    access_log: "/var/log/nginx/example.com.access_log"
+#    error_log:  "/var/log/nginx/example.com.error_log"
+#    root: "/var/www/example.com"
+#    index: "index.html index.php"
+#
+nginx_vhosts: []
