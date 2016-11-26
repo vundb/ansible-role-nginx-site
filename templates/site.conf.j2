@@ -21,9 +21,15 @@ server {
 {% endif %}
 
   root {{ item.root | default("/var/www/localhost") }};
-  index {{ item.index | default("index.html index.htm index.nginx-debian.html") }};
+  index {{ item.index | default("index.html index.php") }};
 
   location / {
     try_files $uri $uri/ =404;
+  }
+
+  location ~ \.php$ {
+    try_files $uri =404;
+    include /etc/nginx/fastcgi.conf;
+    fastcgi_pass {{ fastcgi_pass | default('127.0.0.1:9000') }};
   }
 }
