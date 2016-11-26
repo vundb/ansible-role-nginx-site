@@ -1,6 +1,6 @@
 {
-  "name": "vundb/ansible-role-nginx-vhost",
-  "description": "Ansible role to configure vhosts for nginx service.",
+  "name": "vundb/ansible-role-nginx-site",
+  "description": "Ansible role to configure sites for nginx service.",
   "license": "MIT",
   "type": "chef-role",
   "authors": [
@@ -13,6 +13,6 @@
     "composer/installers": "~1.0"
   },
   "extra": {
-    "installer-name": "vundb-nginx-vhost"
+    "installer-name": "vundb-nginx-site"
   }
 }
