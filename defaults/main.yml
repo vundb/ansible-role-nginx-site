@@ -22,5 +22,6 @@ nginx_services: ["nginx"]
 #    error_log:  "/var/log/nginx/example.com.error_log"
 #    root: "/var/www/example.com"
 #    index: "index.html index.php"
+#    fastcgi_pass: "127.0.0.1:9000"
 #
 nginx_sites: []
