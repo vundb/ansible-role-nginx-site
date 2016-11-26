@@ -1,7 +1,7 @@
-Ansible Role Nginx Vhost
+Ansible Role Nginx Site
 ======================================
 
-Ansible role to configure vhosts for nginx service.
+Ansible role to configure sites for nginx service.
 
 Requirements
 ------------
@@ -21,8 +21,8 @@ Name of system group to run service with. Default value is "nginx"
 Array with services to be restarted on configuration changes. Default value
 is ["nginx"]
 
-- `nginx_vhosts`:
-Array with vhost configuration. Also called server blocks. See
+- `nginx_sites`:
+Array with site configuration. Also called server blocks. See
 [default vars file](defaults/main.yml)
 
 Dependencies
@@ -35,8 +35,8 @@ Example Playbook
 ```
 - hosts: all
   roles:
-    - role: vundb-nginx-vhost
-      nginx_vhosts:
+    - role: vundb-nginx-site
+      nginx_sites:
         - label: "example.com"
           listen_hosts: ["80"]
           server_names: ["example.com"]

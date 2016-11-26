@@ -1,0 +1,29 @@
+#
+# {{ item.label }}
+#
+
+server {
+
+{% for host in item.listen_hosts %}
+  listen {{ host }};
+{% endfor %}
+
+{% for name in item.server_names %}
+  server_name {{ name }};
+{% endfor %}
+
+{% if item.access_log is defined %}
+  access_log {{ item.access_log }};
+{% endif %}
+
+{% if item.error_log is defined %}
+  error_log {{ item.error_log }};
+{% endif %}
+
+  root {{ item.root | default("/var/www/localhost") }};
+  index {{ item.index | default("index.html index.htm index.nginx-debian.html") }};
+
+  location / {
+    try_files $uri $uri/ =404;
+  }
+}

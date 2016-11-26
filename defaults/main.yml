@@ -14,7 +14,7 @@ nginx_group: "nginx"
 nginx_services: ["nginx"]
 
 #
-# Array with vhost configuration.
+# Array with site configuration.
 #  - label: "example.com"
 #    listen_hosts: ["80", "443 ssl"]
 #    server_names: ["example.com"]
@@ -23,4 +23,4 @@ nginx_services: ["nginx"]
 #    root: "/var/www/example.com"
 #    index: "index.html index.php"
 #
-nginx_vhosts: []
+nginx_sites: []
