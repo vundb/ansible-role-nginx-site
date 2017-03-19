@@ -5,7 +5,7 @@
 - name: write site configuration
   become: yes
   template:
-    src: "site.conf.j2"
+    src: "{{ item.template | default('site.conf.j2') }}"
     dest: "/etc/nginx/sites.d/{{ item.label }}.conf"
     owner: "{{ nginx_user }}"
     group: "{{ nginx_group }}"
